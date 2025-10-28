@@ -1,7 +1,7 @@
 package com.generation.inovarh.model;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -33,10 +33,8 @@ public class Colaborador {
 	private String nome;
 		
 	//data_nasc DATE
-	@NotBlank(message = "A data de nascimento é obrigatória.")
-	@Size(min = 10, max = 10, message = "A data de nascimento deve estar no formato dd/MM/yyyy.")
-	@Column(name = "data_nasc", nullable = false)
-	private String dataNasc;
+	@Column(name = "data_nascimento", columnDefinition = "TIMESTAMP")
+	private LocalDate dataNascimento;
 	
 	//valor_hora DOUBLE
 	@NotNull(message = "O valor da hora é obrigatório.")
@@ -65,11 +63,20 @@ public class Colaborador {
 	@Column(name = "descontos", precision = 12, scale = 2)
 	private BigDecimal descontos;
 	
-/*	@ManyToOne
+	@ManyToOne
 	@JsonIgnoreProperties("colaboradores")
 	private Departamento departamento;
-*/
 
+	 public Colaborador() {}
+
+	    public Colaborador(Long id, int horasTrabalhadas, BigDecimal valorHora, BigDecimal bonus, BigDecimal descontos) {
+	        this.id = id;
+	        this.horasTrabalhadas = horasTrabalhadas;
+	        this.valorHora = valorHora;
+	        this.bonus = bonus;
+	        this.descontos = descontos;
+	    }
+	
 	public Long getId() {
 		return id;
 	}
@@ -86,12 +93,12 @@ public class Colaborador {
 		this.nome = nome;
 	}
 
-	public String getDataNasc() {
-		return dataNasc;
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setDataNasc(String dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public BigDecimal getValorHora() {
@@ -126,13 +133,13 @@ public class Colaborador {
 		this.descontos = descontos;
 	}
 
-/*	public Departamento getDepartamento() {
+	public Departamento getDepartamento() {
 		return departamento;
 	}
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
-*/
+
 	
 }

@@ -11,7 +11,5 @@ public interface ColaboradorRepository extends JpaRepository<Colaborador, Long> 
 	//get by nome
 	public List<Colaborador> findAllByNomeContainingIgnoreCase(String nome);
 	
-	//get by departamento
-	public List<Colaborador> findAllByDepartamentoContainingIgnoreCase(String departamento);
-
+	
 }
