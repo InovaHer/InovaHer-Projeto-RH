@@ -1,7 +1,7 @@
 # 💼 Projeto Inova RH - Backend
 
 <p align="center">
-  <img src="https://ik.imagekit.io/u0isfvxls/InovaHer/238466661.png?updatedAt=1761662985923)" alt="logo" />
+  <img src="https://ik.imagekit.io/u0isfvxls/InovaHer/Copilot_20251028_085719.png?updatedAt=1761683022317" alt="logo" />
 </p>
 
 ## 1. Descrição
