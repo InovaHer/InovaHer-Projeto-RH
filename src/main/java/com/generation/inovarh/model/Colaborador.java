@@ -3,6 +3,7 @@ package com.generation.inovarh.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
@@ -34,6 +35,7 @@ public class Colaborador {
 		
 	//data_nasc DATE
 	@Column(name = "data_nascimento", columnDefinition = "TIMESTAMP")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 	
 	//valor_hora DOUBLE
