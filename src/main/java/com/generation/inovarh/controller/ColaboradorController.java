@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.inovarh.model.Colaborador;
 import com.generation.inovarh.repository.ColaboradorRepository;
+import com.generation.inovarh.repository.DepartamentoRepository;
 import com.generation.inovarh.service.ColaboradorService;
 
 import jakarta.validation.Valid;
@@ -32,6 +33,8 @@ public class ColaboradorController {
 		@Autowired
 		private ColaboradorRepository colaboradorRepository;
 		
+		@Autowired
+		private DepartamentoRepository departamentoRepository;
 	
 		@Autowired
 		private ColaboradorService colaboradorService;
@@ -86,7 +89,7 @@ public class ColaboradorController {
 			
 			colaborador.setId(null);
 			
-			return colaboradorRepository.findById(colaborador.getDepartamento().getId())
+			return departamentoRepository.findById(colaborador.getDepartamento().getId())
 					.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(colaboradorRepository.save(colaborador)))
 					.orElse(ResponseEntity.badRequest().build());
 		}

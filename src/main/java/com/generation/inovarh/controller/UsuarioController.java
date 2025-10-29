@@ -19,6 +19,8 @@ import com.generation.inovarh.service.UsuarioService;
 
 import com.generation.inovarh.model.Usuario;
 import com.generation.inovarh.model.UsuarioLogin;
+import com.generation.inovarh.repository.UsuarioRepository;
+
 import jakarta.validation.Valid;
 
 @RestController
@@ -27,6 +29,9 @@ import jakarta.validation.Valid;
 public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 	
 	@GetMapping("/all")
 	public ResponseEntity<List<Usuario>> getAll() {
@@ -38,6 +43,10 @@ public class UsuarioController {
 				.map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 	}
+	@GetMapping("/nome/{nome}")
+    public ResponseEntity<Optional<List<Usuario>>> getAllByNome(@PathVariable String nome) {
+            return ResponseEntity.ok(usuarioRepository.findAllByNomeContainingIgnoreCase(nome));
+    }
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario){
 		return usuarioService.cadastrarUsuario(usuario)

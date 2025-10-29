@@ -34,8 +34,8 @@ public class Colaborador {
 	private String nome;
 		
 	//data_nasc DATE
-	@Column(name = "data_nascimento", columnDefinition = "TIMESTAMP")
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	// @Column(name = "data_nascimento")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 	
 	//valor_hora DOUBLE
