@@ -44,7 +44,7 @@ Além disso, o projeto foi estruturado para **demonstrar boas práticas de desen
 ## 3. Diagrama de Classes
 
 <div align="center">
-    <img src="Captura de tela 2025-10-28 001815.png" title="Diagrama de Classes Inova RH" width="70%"/>
+    <img src="https://ik.imagekit.io/u0isfvxls/InovaHer/Untitled%20diagram-2025-10-28-043036.png?updatedAt=1761753917622" title="Diagrama de Classes Inova RH" width="70%"/>
 </div>
 
 > **Observação:**  
@@ -56,7 +56,7 @@ Além disso, o projeto foi estruturado para **demonstrar boas práticas de desen
 ## 4. Diagrama Entidade-Relacionamento (DER)
 
 <div align="center">
-    <img src="Captura de tela 2025-10-28 001826.png" title="DER Inova RH" width="70%"/>
+    <img src="https://ik.imagekit.io/u0isfvxls/InovaHer/Captura%20de%20tela%202025-10-29%20102243.png?updatedAt=1761753917560" title="DER Inova RH" width="70%"/>
 </div>
 
 > **Relacionamentos:**  
@@ -177,5 +177,5 @@ Além disso, o projeto foi estruturado para **demonstrar boas práticas de desen
 ## 💡 Próximos Passos (próxima sprint)
 
 - Integração completa com o **frontend web**
-- Implementação de testes automatizados (JUnit e Mockito)
+- Implementação de testes automatizados (JUnit)
 - Criação de pipeline CI/CD para deploy contínuo
