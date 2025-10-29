@@ -43,9 +43,7 @@ Além disso, o projeto foi estruturado para **demonstrar boas práticas de desen
 
 ## 3. Diagrama de Classes
 
-<div align="center">
-    <img src="Captura de tela 2025-10-28 001815.png" title="Diagrama de Classes Inova RH" width="70%"/>
-</div>
+
 
 > **Observação:**  
 > O método principal da classe `Colaborador` realiza o cálculo automático do salário com base nas horas trabalhadas, bônus e descontos.  
@@ -55,10 +53,33 @@ Além disso, o projeto foi estruturado para **demonstrar boas práticas de desen
 
 ## 4. Diagrama Entidade-Relacionamento (DER)
 
-<div align="center">
-    <img src="Captura de tela 2025-10-28 001826.png" title="DER Inova RH" width="70%"/>
-</div>
+```mermaid
 
+erDiagram
+
+    TB_DEPARTAMENTOS {
+        BIGINT id PK
+        VARCHAR(100) nome
+        VARCHAR(500) descricao
+    }
+    TB_COLABORADORES {
+        BIGINT id PK
+        VARCHAR(100) nome
+        TIMESTAMP data_nascimento
+        DECIMAL valor_hora
+        INT horas_trabalhadas
+        DECIMAL bonus
+        DECIMAL descontos
+        BIGINT departamento_id FK
+    }
+    TB_USUARIOS {
+        BIGINT id PK
+        VARCHAR(255) nome
+        VARCHAR(255) usuario
+        VARCHAR(255) senha
+        VARCHAR(5000) foto
+    }
+```
 > **Relacionamentos:**  
 > - `Departamento (1) → (N) Colaborador`  
 > - `Colaborador (N) → (1) Departamento`
