@@ -20,9 +20,12 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    //Endpoints que não precisam do token para acessar
     private static final String[] PUBLIC_ENDPOINTS = {
         "/usuarios/logar",
         "/usuarios/cadastrar",
+        "/departamentos",
+        "/colaboradores",
         "/error/**",
         "/", "/docs", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**"
     };
