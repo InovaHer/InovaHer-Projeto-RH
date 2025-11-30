@@ -23,6 +23,14 @@ public class SecurityConfig {
     private static final String[] PUBLIC_ENDPOINTS = {
         "/usuarios/logar",
         "/usuarios/cadastrar",
+        "/departamentos",
+        "/departamentos/{id}",
+        "/departamentos/nome/{nome}",
+        "/departamentos/descricao/{descricao}",
+        "/colaboradores",
+        "/colaboradores/{id}",
+        "/colaboradores/salariofinal/{id}",
+        "/colaboradores/nome/{nome}",
         "/error/**",
         "/", "/docs", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**"
     };

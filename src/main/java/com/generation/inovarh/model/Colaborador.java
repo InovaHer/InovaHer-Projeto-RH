@@ -65,18 +65,22 @@ public class Colaborador {
 	@Column(name = "descontos", precision = 12, scale = 2)
 	private BigDecimal descontos;
 	
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
+	private String foto;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("colaboradores")
 	private Departamento departamento;
 
 	 public Colaborador() {}
 
-	    public Colaborador(Long id, int horasTrabalhadas, BigDecimal valorHora, BigDecimal bonus, BigDecimal descontos) {
+	    public Colaborador(Long id, int horasTrabalhadas, BigDecimal valorHora, BigDecimal bonus, BigDecimal descontos, String foto) {
 	        this.id = id;
 	        this.horasTrabalhadas = horasTrabalhadas;
 	        this.valorHora = valorHora;
 	        this.bonus = bonus;
 	        this.descontos = descontos;
+	        this.foto = foto;
 	    }
 	
 	public Long getId() {
@@ -141,6 +145,14 @@ public class Colaborador {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	
